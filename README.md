@@ -42,7 +42,7 @@ A correctly structured JSON file containing a top-level "books" array with valid
 
 <img width="693" height="403" alt="image" src="https://github.com/user-attachments/assets/792137cc-2c6e-4e33-881d-98116847476d" />
 
-# Explanation:
+### Explanation:
 This question involves creating a structured dataset named books.json to store a collection of books. The file uses a top-level “books” array containing individual book objects with strictly validated data types, including strings for titles and authors, a number for publication year, and an array of strings for genres. Formatting rules such as double-quoted property names and the absence of trailing commas are strictly enforced to ensure valid JSON syntax.
 
 ### Question 2 (Q2)
@@ -56,7 +56,7 @@ c. The genres of both books grouped by their titles.
 
 <img width="839" height="162" alt="image" src="https://github.com/user-attachments/assets/bc7e7216-6a74-4315-ba76-b839b1d1944d" />
 
-# Explanation:
+### Explanation:
 Question 2 requires developing books.html to asynchronously load and display data from books.json using the native JavaScript fetch() API and async/await. By validating the HTTP response and parsing the JSON data, the script extracts specific items, specifically the first book's title, second book's author, genre groupings, and renders them safely onto the webpage using textContent and createElement() while incorporating robust error handling.
 
 ### Question 3 (Q3)
@@ -71,7 +71,7 @@ c. Click event handling on #myButton using .on("click", ...) to trigger an alert
 <img width="1050" height="143" alt="image" src="https://github.com/user-attachments/assets/9fd2fa29-217d-4404-84d3-5eb1c908efbf" />
 <img width="469" height="147" alt="image" src="https://github.com/user-attachments/assets/85f5051b-b508-4e97-b862-006f196dd6e9" />
 
-# Explanation:
+### Explanation:
 This question demonstrates client-side DOM manipulation and event handling using jQuery 4.0.0 imported via an official CDN. It implements jQuery equivalents to native JavaScript operations by utilizing .text() to update element text, .addClass() to apply styling classes like .myStyle, and .on("click", ...) to bind interactive event listeners that trigger alert popups upon button interaction.
 
 ## 4. Advantages of native JavaScript
