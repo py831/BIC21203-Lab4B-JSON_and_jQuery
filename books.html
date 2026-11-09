@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Q2: Retrieve and Display JSON Data </title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+            .error { color: red; font-weight: bold; }
+            .result-item { margin-bottom: 12px; }
+            span.label { font-weight: bold; color: #333; }
+        </style>
+    </head>
+    <body>
+
+        <h2>Book Collection Details</h2>
+        <div id="output">Loading data...</div>
+
+        <script>
+            async function loadBooks() {
+                const outputDiv = document.getElementById("output");
+                try {
+                    const response = await fetch('books.json');
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    
+                    // Clear loading text
+                    outputDiv.textContent = "";
+
+                    // Extract required data elements
+                    const firstBookTitle = data.books[0].title;
+                    const secondBookAuthor = data.books[1].author;
+                    const genresGrouped = `${data.books[0].title} (${data.books[0].genres.join(", ")}); ${data.books[1].title} (${data.books[1].genres.join(", ")})`;
+
+                    // Create elements with clear labels for each part of Question 2
+                    const p1 = document.createElement("div");
+                    p1.className = "result-item";
+                    p1.innerHTML = `<span class="label">(a) Title of the first book:</span> ${firstBookTitle}`;
+
+                    const p2 = document.createElement("div");
+                    p2.className = "result-item";
+                    p2.innerHTML = `<span class="label">(b) Author of the second book:</span> ${secondBookAuthor}`;
+
+                    const p3 = document.createElement("div");
+                    p3.className = "result-item";
+                    p3.innerHTML = `<span class="label">(c) Genres grouped by book title:</span> ${genresGrouped}`;
+
+                    outputDiv.appendChild(p1);
+                    outputDiv.appendChild(p2);
+                    outputDiv.appendChild(p3);
+
+                } catch (error) {
+                    outputDiv.textContent = "Failed to load or parse book data. Please check if you are running via a local server.";
+                    outputDiv.className = "error";
+                    console.error("Error fetching JSON:", error);
+                }
+            }
+
+            loadBooks();
+        </script>
+    </body>
+</html>
